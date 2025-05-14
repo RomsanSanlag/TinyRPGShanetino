@@ -69,5 +69,8 @@ public class PlayerController : MonoBehaviour
         // animate player
         _newPlayerWalkSpeed = _horisontalInput == Vector3.zero ? 0 : 1;
         _playerAnimator.SetFloat("WalkSpeed", _newPlayerWalkSpeed);
+
+        if (_attack) _playerAnimator.SetTrigger("Attack");
+        _attack = false;
     }
 }
