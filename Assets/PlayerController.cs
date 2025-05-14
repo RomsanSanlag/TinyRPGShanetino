@@ -11,9 +11,11 @@ public class PlayerController : MonoBehaviour
     bool _attack;
     Vector3 _newPlayerPosition;
     Quaternion _newPlayerRotation;
+    float _newPlayerWalkSpeed;
 
     NavMeshHit hit;
     float _checkRadius = 1;
+    Quaternion rotation = Quaternion.Euler(0, 0, -45);
 
     private void Start()
     {
@@ -25,11 +27,11 @@ public class PlayerController : MonoBehaviour
         // GET INPUTS ---------------------------
 
         // y axis
-        if (Input.GetKey(KeyCode.W)) 
-        { 
+        if (Input.GetKey(KeyCode.W))
+        {
             _horisontalInput.z = 1;
             if (Input.GetKey(KeyCode.S)) _horisontalInput.z = 0;
-        } 
+        }
         else if (Input.GetKey(KeyCode.S)) _horisontalInput.z = -1;
         else _horisontalInput.z = 0;
 
@@ -45,6 +47,8 @@ public class PlayerController : MonoBehaviour
         // attack
         if (Input.GetMouseButtonDown(0)) _attack = true;
 
+        // rotate inputs
+        _horisontalInput = rotation * _horisontalInput;
 
         // USE INPUTS ---------------------------
 
@@ -61,5 +65,9 @@ public class PlayerController : MonoBehaviour
             _newPlayerRotation = Quaternion.LookRotation(_horisontalInput.normalized, Vector3.up);
             _playerTransform.rotation = _newPlayerRotation;
         }
+
+        // animate player
+        _newPlayerWalkSpeed = _horisontalInput == Vector3.zero ? 0 : 1;
+        _playerAnimator.SetFloat("WalkSpeed", _newPlayerWalkSpeed);
     }
 }
