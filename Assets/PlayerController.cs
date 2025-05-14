@@ -10,9 +10,10 @@ public class PlayerController : MonoBehaviour
     Vector3 _horisontalInput;
     bool _attack;
     Vector3 _newPlayerPosition;
+    Quaternion _newPlayerRotation;
 
     NavMeshHit hit;
-    float checkRadius;
+    float _checkRadius = 1;
 
     private void Start()
     {
@@ -47,11 +48,18 @@ public class PlayerController : MonoBehaviour
 
         // USE INPUTS ---------------------------
 
-        _newPlayerPosition += _horisontalInput.normalized * _playerSpeed * Time.deltaTime;
-        if (NavMesh.SamplePosition(_newPlayerPosition, out hit, checkRadius, NavMesh.AllAreas) == false)
+        // move player
+        if (NavMesh.SamplePosition(_newPlayerPosition, out hit, _checkRadius, NavMesh.AllAreas))
         {
-            _playerTransform.position = _newPlayerPosition;
+            _playerTransform.position += _horisontalInput.normalized * _playerSpeed * Time.deltaTime;
         }
-        Debug.Log("Outside of nav mesh");
+        else Debug.Log("Outside of nav mesh");
+
+        // rotate player
+        if (_horisontalInput != Vector3.zero)
+        {
+            _newPlayerRotation = Quaternion.LookRotation(_horisontalInput.normalized, Vector3.up);
+            _playerTransform.rotation = _newPlayerRotation;
+        }
     }
 }
