@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     NavMeshHit hit;
     float _checkRadius = 1;
-    Quaternion rotation = Quaternion.Euler(0, 0, -45);
+    Quaternion rotation = Quaternion.Euler(0, 45, 0);
 
     private void Start()
     {
