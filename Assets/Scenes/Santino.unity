@@ -4260,7 +4260,7 @@ Transform:
   m_GameObject: {fileID: 270184633}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2685594, y: -0.36615855, z: 0.11124095, w: 0.88398486}
-  m_LocalPosition: {x: -5.4805355, y: -2.28257, z: -14.583677}
+  m_LocalPosition: {x: -9.4405365, y: -2.28257, z: -24.173677}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5097,7 +5097,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2685594, y: -0.36615855, z: 0.11124095, w: 0.88398486}
-  m_LocalPosition: {x: -5.4805355, y: -2.28257, z: -14.583677}
+  m_LocalPosition: {x: -9.4405365, y: -2.28257, z: -24.173677}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9596,6 +9596,59 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04634d4422539e74cb1dc9d424a3e149, type: 3}
+--- !u!1 &640376159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 640376161}
+  - component: {fileID: 640376160}
+  m_Layer: 0
+  m_Name: TriggerRoom1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &640376160
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640376159}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.900197, y: 4.402248, z: 1}
+  m_Center: {x: -0.5050955, y: 1.701124, z: 0}
+--- !u!4 &640376161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640376159}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.98, y: 0.6, z: 19.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &643152217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19376,7 +19429,6 @@ GameObject:
   - component: {fileID: 1225970334}
   - component: {fileID: 1225970333}
   - component: {fileID: 1225970332}
-  - component: {fileID: 1225970331}
   - component: {fileID: 1225970330}
   m_Layer: 0
   m_Name: Skeleton
@@ -19402,7 +19454,7 @@ MonoBehaviour:
   m_BlackboardVariableOverridesList:
   - rid: 8039850325994111256
   - rid: 8039850325994111257
-  - rid: 8039850325994111676
+  - rid: 8039850348466929684
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
@@ -19426,36 +19478,15 @@ MonoBehaviour:
           m_Value1: 1970736216709559833
         Name: Player
         m_Value: {fileID: 766151675}
-    - rid: 8039850325994111676
-      type: {class: 'BlackboardVariable`1[[UnityEngine.SphereCollider, UnityEngine.PhysicsModule]]',
+    - rid: 8039850348466929684
+      type: {class: 'BlackboardVariable`1[[UnityEngine.BoxCollider, UnityEngine.PhysicsModule]]',
         ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         GUID:
-          m_Value0: 11046022032477356763
-          m_Value1: 7601929458392333640
-        Name: ProximityCollider
-        m_Value: {fileID: 1225970331}
---- !u!135 &1225970331
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1225970329}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 3.868342
-  m_Center: {x: 0.00000003094212, y: 0, z: 3.3683376}
+          m_Value0: 6383888218475509356
+          m_Value1: 3595185294829346433
+        Name: TriggerRoom
+        m_Value: {fileID: 640376160}
 --- !u!54 &1225970332
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28742,7 +28773,7 @@ Animator:
   m_GameObject: {fileID: 2002500145}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0b3da1f3c3be7b14bbbc3e7c0295b0b4, type: 2}
-  m_Controller: {fileID: 9100000, guid: 316a7044e3e3c43e7846c86106369fbb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8ac16006cf0832348afc7a99cc1cc6cb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -31068,7 +31099,7 @@ PrefabInstance:
     - target: {fileID: 2221839628788110084, guid: 8b89fdb0c71dd438b9b7b0ef242463bc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.6
+      value: 3.64
       objectReference: {fileID: 0}
     - target: {fileID: 2221839628788110084, guid: 8b89fdb0c71dd438b9b7b0ef242463bc,
         type: 3}
@@ -31078,7 +31109,7 @@ PrefabInstance:
     - target: {fileID: 2221839628788110084, guid: 8b89fdb0c71dd438b9b7b0ef242463bc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 26.78
+      value: 17.19
       objectReference: {fileID: 0}
     - target: {fileID: 2221839628788110084, guid: 8b89fdb0c71dd438b9b7b0ef242463bc,
         type: 3}
@@ -31133,7 +31164,7 @@ PrefabInstance:
     - target: {fileID: 4970638748679642028, guid: 8b89fdb0c71dd438b9b7b0ef242463bc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.88313246
+      value: 0.8831327
       objectReference: {fileID: 0}
     - target: {fileID: 4970638748679642028, guid: 8b89fdb0c71dd438b9b7b0ef242463bc,
         type: 3}
@@ -31404,3 +31435,4 @@ SceneRoots:
   - {fileID: 966469400}
   - {fileID: 164211095928399044}
   - {fileID: 1225970334}
+  - {fileID: 640376161}
