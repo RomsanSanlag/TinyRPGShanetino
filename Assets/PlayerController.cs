@@ -7,12 +7,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform _playerTransform;
     [SerializeField] float _playerSpeed;
 
-    Vector2 _horisontalInput;
+    Vector3 _horisontalInput;
     bool _attack;
-    Vector2 _newPlayerPosition;
+    Vector3 _newPlayerPosition;
 
     NavMeshHit hit;
-    float checkRadius; 
+    float checkRadius;
+
+    private void Start()
+    {
+        _newPlayerPosition = _playerTransform.position;
+    }
 
     private void Update()
     {
@@ -21,11 +26,11 @@ public class PlayerController : MonoBehaviour
         // y axis
         if (Input.GetKey(KeyCode.W)) 
         { 
-            _horisontalInput.y = 1;
-            if (Input.GetKey(KeyCode.S)) _horisontalInput.y = 0;
+            _horisontalInput.z = 1;
+            if (Input.GetKey(KeyCode.S)) _horisontalInput.z = 0;
         } 
-        else if (Input.GetKey(KeyCode.S)) _horisontalInput.y = -1;
-        else _horisontalInput.y = 0;
+        else if (Input.GetKey(KeyCode.S)) _horisontalInput.z = -1;
+        else _horisontalInput.z = 0;
 
         // x axis
         if (Input.GetKey(KeyCode.D))
@@ -42,13 +47,11 @@ public class PlayerController : MonoBehaviour
 
         // USE INPUTS ---------------------------
 
-        _newPlayerPosition = _horisontalInput * _playerSpeed * Time.deltaTime;
-        if (NavMesh.SamplePosition(_newPlayerPosition, out hit, checkRadius, NavMesh.AllAreas))
+        _newPlayerPosition += _horisontalInput.normalized * _playerSpeed * Time.deltaTime;
+        if (NavMesh.SamplePosition(_newPlayerPosition, out hit, checkRadius, NavMesh.AllAreas) == false)
         {
             _playerTransform.position = _newPlayerPosition;
-            Debug.Log("Outside of nav mesh");
         }
-
-        //Debug.Log(_horisontalInput);
+        Debug.Log("Outside of nav mesh");
     }
 }
