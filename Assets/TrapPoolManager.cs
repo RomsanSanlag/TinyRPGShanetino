@@ -4,7 +4,8 @@ using UnityEngine;
 
 public interface IStorableInPool
 {
-    void reset();
+    void ResetObject();
+    void ForceReturn();
 }
 
 public class TrapPoolManager : MonoBehaviour
@@ -28,21 +29,21 @@ public class TrapPoolManager : MonoBehaviour
         }
     }
 
-    public bool GetObject(Vector3 position, Quaternion rotation)
+    public GameObject GetObject(Vector3 position, Quaternion rotation)
     {
         int index = GetNextFreeObjectIndex();
-        if (index == -1) return false;
+        if (index == -1) return null;
 
         _objectsInPool[index].transform.position = position;
         _objectsInPool[index].transform.rotation = rotation;
         _objectsInPool[index].SetActive(true);
-        return true;
+        return _objectsInPool[index];
     }
 
     public void ReturnObject(GameObject obj) 
     {
         obj.SetActive(false);
-        //obj.GetComponent<IStorableInPool>().reset();
+        obj.GetComponent<IStorableInPool>().ResetObject();
     }
 
     int GetNextFreeObjectIndex()
