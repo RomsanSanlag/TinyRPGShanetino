@@ -4470,6 +4470,37 @@ Transform:
   - {fileID: 648051725}
   m_Father: {fileID: 1324397114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &275265972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 275265973}
+  m_Layer: 0
+  m_Name: WaypointRoom1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &275265973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275265972}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.34, y: 0.145, z: 25.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &277067580 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5d68d1e38da0311479c8004fc150be37,
@@ -4628,6 +4659,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d68d1e38da0311479c8004fc150be37, type: 3}
+--- !u!1 &289597301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 289597302}
+  m_Layer: 0
+  m_Name: WaypointRoom1 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &289597302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289597301}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.31, y: 0.145, z: 35.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &296330651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10343,6 +10405,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d68d1e38da0311479c8004fc150be37, type: 3}
+--- !u!1 &675387243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 675387244}
+  m_Layer: 0
+  m_Name: WaypointRoom1 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &675387244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675387243}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.66, y: 0.145, z: 23.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &678042522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19453,8 +19546,10 @@ MonoBehaviour:
     type: 2}
   m_BlackboardVariableOverridesList:
   - rid: 8039850325994111256
-  - rid: 8039850325994111257
-  - rid: 8039850348466929684
+  - rid: 8039850371321430107
+  - rid: 8039850371321430108
+  - rid: 8039850371321430629
+  - rid: 8039850372622188598
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
@@ -19469,7 +19564,7 @@ MonoBehaviour:
           m_Value1: 0
         Name: Self
         m_Value: {fileID: 1225970329}
-    - rid: 8039850325994111257
+    - rid: 8039850371321430107
       type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]',
         ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -19478,7 +19573,7 @@ MonoBehaviour:
           m_Value1: 1970736216709559833
         Name: Player
         m_Value: {fileID: 766151675}
-    - rid: 8039850348466929684
+    - rid: 8039850371321430108
       type: {class: 'BlackboardVariable`1[[UnityEngine.BoxCollider, UnityEngine.PhysicsModule]]',
         ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -19487,6 +19582,27 @@ MonoBehaviour:
           m_Value1: 3595185294829346433
         Name: TriggerRoom
         m_Value: {fileID: 640376160}
+    - rid: 8039850371321430629
+      type: {class: 'BlackboardVariable`1[[System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]], mscorlib]]',
+        ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 697068197454735946
+          m_Value1: 6978430635558471347
+        Name: PatrolPoints
+        m_Value:
+        - {fileID: 275265972}
+        - {fileID: 289597301}
+        - {fileID: 675387243}
+    - rid: 8039850372622188598
+      type: {class: 'BlackboardVariable`1[[System.String, mscorlib]]', ns: Unity.Behavior,
+        asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 385654364470830411
+          m_Value1: 12344150426813128965
+        Name: New String
+        m_Value: Player
 --- !u!54 &1225970332
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19545,7 +19661,7 @@ Transform:
   m_GameObject: {fileID: 1225970329}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.75440675, z: -0, w: 0.6564072}
-  m_LocalPosition: {x: -0.67, y: 0.05000019, z: 30.52}
+  m_LocalPosition: {x: -0.67, y: 0, z: 30.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31201,6 +31317,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6331558144665418028, guid: 8b89fdb0c71dd438b9b7b0ef242463bc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 9003200076993734132, guid: 8b89fdb0c71dd438b9b7b0ef242463bc,
         type: 3}
       propertyPath: _drawDebugGizmo
@@ -31436,3 +31557,6 @@ SceneRoots:
   - {fileID: 164211095928399044}
   - {fileID: 1225970334}
   - {fileID: 640376161}
+  - {fileID: 275265973}
+  - {fileID: 289597302}
+  - {fileID: 675387244}
