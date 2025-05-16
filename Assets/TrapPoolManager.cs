@@ -28,6 +28,7 @@ public class TrapPoolManager : MonoBehaviour
         for (int i = 0; i < _poolSize; i++)
         {
             _objectsInPool[i] = Instantiate(_gameObject, transform.position, transform.rotation);
+            _objectsInPool[i].name = "Trap_" + i;
             _objectsInPool[i].SetActive(false);
         }
     }
@@ -38,13 +39,13 @@ public class TrapPoolManager : MonoBehaviour
         if (index == -1)
         {
             ForceReturnOldestObject();
-            index = 0;
+            index = GetNextFreeObjectIndex();
         }
 
         _objectsInPool[index].transform.position = position;
         _objectsInPool[index].transform.rotation = rotation;
         _objectsInPool[index].SetActive(true);
-        _spawnedObjects.Add(gameObject.GetComponent<IStorableInPool>());
+        _spawnedObjects.Add(_objectsInPool[index].GetComponent<IStorableInPool>());
         return _objectsInPool[index];
     }
 

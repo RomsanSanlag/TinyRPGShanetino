@@ -29,7 +29,7 @@ public class TrapPlacer : MonoBehaviour
 
     private void ReturnTrap(GameObject trap)
     {
-        trapPool.ReturnObject(trap);
         trap.GetComponent<TrapController>().OnTrapDespawn -= ReturnTrap;
+        trapPool.ReturnObject(trap);
     }
 }

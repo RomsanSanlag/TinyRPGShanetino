@@ -10,7 +10,6 @@ public class TrapController : MonoBehaviour, IStorableInPool
 
     public void ForceReturnToPool()
     {
-        Debug.Log("ForceReturn called");
         OnTrapDespawn?.Invoke(this.gameObject);
     }
 
