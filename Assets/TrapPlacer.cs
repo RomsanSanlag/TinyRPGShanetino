@@ -6,7 +6,7 @@ public class TrapPlacer : MonoBehaviour
 {
     [SerializeField] TrapPoolManager trapPool;
     bool _actionTriggered;
-    
+
 
     private void Update()
     {
@@ -17,7 +17,19 @@ public class TrapPlacer : MonoBehaviour
 
     private void PlaceTrap()
     {
-        bool success = trapPool.GetObject(transform.position, transform.rotation);
-        if (success == false) Debug.Log("No Traps left in the pool");
+        GameObject trap = trapPool.GetObject(transform.position, transform.rotation);
+        if (trap == null)
+        {
+            Debug.Log("No Traps left in the pool");
+            return;
+        }
+
+        trap.GetComponent<TrapController>().OnTrapDespawn += ReturnTrap;
+    }
+
+    private void ReturnTrap(GameObject trap)
+    {
+        trap.GetComponent<TrapController>().OnTrapDespawn -= ReturnTrap;
+        trapPool.ReturnObject(trap);
     }
 }

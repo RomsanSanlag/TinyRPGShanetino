@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="PlayerController" Collapsed="true">
+    <Position X="3.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQCIAAgAAAQCAAABACAAAAACAAAAAAIABAEA=</HashCode>
+      <FileName>Assets\PlayerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RandomStartAnimation" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACIABAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Script\AnimationRandomizer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrapController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAQAAYAAAAAAAABA=</HashCode>
+      <FileName>Assets\TrapController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Trappable" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Trappable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TrapPlacer" Collapsed="true">
+    <Position X="5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAggAAAAAAAAAEAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Assets\TrapPlacer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrapPoolManager" Collapsed="true">
+    <Position X="6.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAACAAIAAAQAQAAAAACAgAAAAAAAAAAAAAAQI=</HashCode>
+      <FileName>Assets\TrapPoolManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ITrappable" Collapsed="true">
+    <Position X="5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\TrapController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IStorableInPool" Collapsed="true">
+    <Position X="3.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAABA=</HashCode>
+      <FileName>Assets\TrapPoolManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

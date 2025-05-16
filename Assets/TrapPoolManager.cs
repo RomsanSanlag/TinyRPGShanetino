@@ -1,10 +1,13 @@
+using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
 
 public interface IStorableInPool
 {
-    void reset();
+    void ResetObject();
+    void ForceReturnToPool();
 }
 
 public class TrapPoolManager : MonoBehaviour
@@ -18,31 +21,39 @@ public class TrapPoolManager : MonoBehaviour
     [SerializeField] static int _poolSize = 5;
 
     GameObject[] _objectsInPool = new GameObject[_poolSize];
+    List<IStorableInPool> _spawnedObjects = new List<IStorableInPool> ();
 
     private void Start()
     {
         for (int i = 0; i < _poolSize; i++)
         {
             _objectsInPool[i] = Instantiate(_gameObject, transform.position, transform.rotation);
+            _objectsInPool[i].name = "Trap_" + i;
             _objectsInPool[i].SetActive(false);
         }
     }
 
-    public bool GetObject(Vector3 position, Quaternion rotation)
+    public GameObject GetObject(Vector3 position, Quaternion rotation)
     {
         int index = GetNextFreeObjectIndex();
-        if (index == -1) return false;
+        if (index == -1)
+        {
+            ForceReturnOldestObject();
+            index = GetNextFreeObjectIndex();
+        }
 
         _objectsInPool[index].transform.position = position;
         _objectsInPool[index].transform.rotation = rotation;
         _objectsInPool[index].SetActive(true);
-        return true;
+        _spawnedObjects.Add(_objectsInPool[index].GetComponent<IStorableInPool>());
+        return _objectsInPool[index];
     }
 
     public void ReturnObject(GameObject obj) 
     {
+        _spawnedObjects.Remove(obj.GetComponent<IStorableInPool>());
         obj.SetActive(false);
-        //obj.GetComponent<IStorableInPool>().reset();
+        obj.GetComponent<IStorableInPool>().ResetObject();
     }
 
     int GetNextFreeObjectIndex()
@@ -52,5 +63,10 @@ public class TrapPoolManager : MonoBehaviour
             if (_objectsInPool[i].activeSelf == false) return i;
         }
         return -1;
+    }
+
+    private void ForceReturnOldestObject()
+    {
+        _spawnedObjects[0].ForceReturnToPool(); 
     }
 }
