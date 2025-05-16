@@ -1,6 +1,7 @@
 ﻿using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour , IDamagable
 {
@@ -23,6 +24,7 @@ public class PlayerHealth : MonoBehaviour , IDamagable
         {
             _isDead = true;
             _animator.SetTrigger("Die");
+            SceneManager.LoadScene("Santino");
         }
             
     }
