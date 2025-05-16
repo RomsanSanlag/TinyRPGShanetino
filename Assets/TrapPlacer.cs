@@ -24,12 +24,12 @@ public class TrapPlacer : MonoBehaviour
             return;
         }
 
-        trap.GetComponent<TrapController>().OnTrapSetOff += ReturnTrap;
+        trap.GetComponent<TrapController>().OnTrapDespawn += ReturnTrap;
     }
 
     private void ReturnTrap(GameObject trap)
     {
         trapPool.ReturnObject(trap);
-        trap.GetComponent<TrapController>().OnTrapSetOff -= ReturnTrap;
+        trap.GetComponent<TrapController>().OnTrapDespawn -= ReturnTrap;
     }
 }

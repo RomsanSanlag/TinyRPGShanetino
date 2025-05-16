@@ -2,11 +2,17 @@ using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class TrapController : MonoBehaviour, IStorableInPool
+public class TrapController : MonoBehaviour, IStorableInPool 
 {
     [SerializeField] GameObject _spikes;
 
-    public event Action<GameObject> OnTrapSetOff;
+    public event Action<GameObject> OnTrapDespawn;
+
+    public void ForceReturnToPool()
+    {
+        Debug.Log("ForceReturn called");
+        OnTrapDespawn?.Invoke(this.gameObject);
+    }
 
     public void ResetObject()
     {
@@ -23,12 +29,7 @@ public class TrapController : MonoBehaviour, IStorableInPool
 
         await Task.Delay(1000);
 
-        OnTrapSetOff?.Invoke(this.gameObject);
-    }
-
-    public void ForceReturn()
-    {
-        OnTrapSetOff?.Invoke(this.gameObject);
+        OnTrapDespawn?.Invoke(this.gameObject);
     }
 }
 
